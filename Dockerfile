@@ -11,9 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 ADD main.py model.py ./
 
 
-RUN ["python", "model.py"]
 
-CMD ["python","main.py"]
 
 
 
