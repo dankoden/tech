@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: ihor
+      POSTGRES_PASSWORD: 140697
+      POSTGRES_DB: tech_task
+
+
+
+
+
+
