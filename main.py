@@ -114,7 +114,7 @@ async def main():
     """Open session and get all pages for parsing"""
     async with aiohttp.ClientSession() as client:
         c = 0
-        for page in range(1, 2):
+        for page in range(1, 94):
             c += 1
             print(f'{c} of 94')
             url = f'https://www.kijiji.ca/b-apartments-condos\
