@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, Integer,  Date
 
 
-engine = create_engine('postgresql://ihor:140697@db/tech_task')
+engine = create_engine('postgresql://ihor:140697@db:5432/tech')
 conn = engine.connect()
 
 Base = declarative_base()
@@ -12,9 +12,10 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
+
 # The Ad class is equivalent to a table created in sql
 class Ad(Base):
-    __tablename__ = "ad"
+    __tablename__ = "ads"
     id = Column(Integer, primary_key=True)
     title = Column(String())
     city = Column(String())

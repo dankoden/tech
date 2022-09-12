@@ -1,14 +1,17 @@
-FROM python:3
+FROM python:3.8
 
 MAINTAINER ihor
 
-WORKDIR /tech_task
-
 ADD requirements.txt  ./
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install --upgrade pip
 
-ADD main.py model.py ./
+RUN pip install -r requirements.txt
+
+ADD main.py model.py techtask.json /tech_task/
+
+WORKDIR /tech_task/
+
 
 
 

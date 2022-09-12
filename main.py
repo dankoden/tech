@@ -3,7 +3,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from random_user_agent.user_agent import UserAgent
 from model import Ad, session
-
+from model import Base,engine
 import httplib2
 import apiclient
 import aiohttp
@@ -123,6 +123,7 @@ async def main():
 
 
 if __name__ == "__main__":
+    Base.metadata.create_all(engine)
     auth_to_google_sheet()
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
